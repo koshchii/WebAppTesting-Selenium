@@ -8,21 +8,21 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-chrome_options = Options()
-chrome_options.add_argument('--headless')
+#Run Chrome in background (uncomment to test)
+#chrome_options = Options()
+#chrome_options.add_argument('--headless')
+#driver = webdriver.Chrome(options=chrome_options)
 
 #Initialize driver
-#driver = w ebdriver.Firefox()
-driver = webdriver.Chrome(options=chrome_options)
-
-#Open URL
+driver = webdriver.Chrome()
+#Chose URL to open
 url = "http://automationpractice.com/index.php"
 driver.get(url)
 
-#Maximize window
+#Maximize Chrome window
 driver.maximize_window()
 
-#Press "Contuct us" button
+#Press the "Contact us" button
 contact_xpath = '//*[@id="contact-link"]/a'
 contact = driver.find_element_by_xpath(contact_xpath)
 contact.click()
@@ -30,15 +30,15 @@ contact.click()
 #Wait 2 seconds before executing next command
 time.sleep(2)
 
-#Press "go back" in the browser and wait
+#Press browser's "go back" button
 driver.back()
 time.sleep(2)
 
-#Press "go forward" in the browser and wait
+#Press browser's "go forward" button
 driver.forward()
 time.sleep(2)
 
-#Print the title
+#Page title
 print("The current page title: ", driver.title)
 time.sleep(2)
 
@@ -46,11 +46,7 @@ time.sleep(2)
 driver.minimize_window()
 time.sleep(2)
 
-#Maximize the screen
-driver.maximize_window()
-time.sleep(2)
-
-#Print URL
+#Page URL
 print("The current URL: ", driver.current_url)
 time.sleep(2)
 
@@ -58,6 +54,6 @@ time.sleep(2)
 driver.refresh()
 time.sleep(2)
 
-#Close thepage
+#Close the page
 driver.close()
 print("The page was closed sucessfully")

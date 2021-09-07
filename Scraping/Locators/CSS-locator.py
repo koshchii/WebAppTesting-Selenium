@@ -1,8 +1,17 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Sep  1 16:40:30 2021
-
 @author: alexk
+
+CSS basic structure:
+
+tag[attribute="value"]
+
+if "attribute" == "id", then the CSS shortcut is:
+#value
+
+if "attribute" == "class", then the CSS shortcut is:
+.value
 """
 
 import time
@@ -15,19 +24,6 @@ driver = webdriver.Chrome()
 url = "http://automationpractice.com/index.php"
 driver.get(url)
 driver.maximize_window()
-
-'''
-CSS basic structure:
-    
-tag[attribute="value"]
-
-if attribute == id, then CSS shortcut is:
-#value
-
-if attribute == class, then CSS shortcut is:
-.value
-
-'''
 
 #Relative CSS selector
 cart_CSS = 'a[title="View my shopping cart"]'
